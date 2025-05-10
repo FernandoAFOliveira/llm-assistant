@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  llm-backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app
+      - ./:/workspace 
+      - chroma_data:/app/chroma_storage
+      - db_data:/data  # Changed from /app/project.db
+    extra_hosts:
+      - "host.docker.internal:host-gateway"  # For connecting to Ollama on host
+
+volumes:
+  chroma_data:
+  db_data:

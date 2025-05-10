@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyenv
+
+# Docker
+chroma_data/
+db_data/
+
+# Environment
+.env
+.venv
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# System
+.DS_Store
