@@ -12,6 +12,16 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"  # For connecting to Ollama on host
 
+  frontend:
+    image: node:18-alpine
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    command: npm install && npm run dev
+    ports:
+      - "5173:5173"
+
 volumes:
   chroma_data:
   db_data:

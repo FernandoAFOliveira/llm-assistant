@@ -1,0 +1,24 @@
+{
+  "name": "llm-assistant",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FernandoAFOliveira/llm-assistant.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FernandoAFOliveira/llm-assistant/issues"
+  },
+  "homepage": "https://github.com/FernandoAFOliveira/llm-assistant#readme",
+  "description": "",
+  "dependencies": {
+    "generator-code": "^1.11.9",
+    "yo": "^5.1.0"
+  }
+}

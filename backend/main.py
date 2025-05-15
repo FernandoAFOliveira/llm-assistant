@@ -8,6 +8,7 @@ from llama_index.embeddings.ollama import OllamaEmbedding
 import chromadb
 import sqlite3
 import os
+import subprocess
 
 app = FastAPI()
 app.add_middleware(CORSMiddleware, allow_origins=["*"])
@@ -63,3 +64,17 @@ async def ask(question: str):
 @app.get("/")
 async def root():
     return {"message": "API is running"}
+
+@app.post("/api/start-services")
+async def start_services():
+    try:
+        process = subprocess.Popen(
+            ["./launch.sh"],
+            cwd="/app",  # Make sure this matches your Docker WORKDIR
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE
+        )
+        return {"success": True, "message": "Services starting"}
+    except Exception as e:
+        return {"success": False, "error": str(e)}
+    

@@ -14,6 +14,9 @@ RUN mkdir -p /data && chmod a+rwx /data
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+COPY launch.sh /app/launch.sh
+RUN chmod +x /app/launch.sh
+
 COPY . .
 
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5000", "--reload"]

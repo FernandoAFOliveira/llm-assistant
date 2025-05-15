@@ -1,0 +1,11 @@
+{
+  "name": "LLM Assistant",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "llm-backend",
+  "workspaceFolder": "/app",
+  "extensions": [
+    "ms-vscode.remote-containers",
+    "humao.rest-client"
+  ],
+  "forwardPorts": [5000]
+}
